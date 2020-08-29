@@ -1,21 +1,13 @@
 import React from 'react';
 
-class Card extends React.Component {
+function Card(props) {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        }
-    }
-
-
-    render() {
-        return(
-            <p>Card Works</p>
-        );
-
-    }
+    return(
+        <div className="" onClick={(e) => props.click(props.item)}>
+            <img className="" src={props.item.imgSrc} alt={props.item.imgSrc} />
+            { props.item.selected && <CardInfo title={props.item.title} subTitle={props.item.subTitle} link={props.item.link} /> }
+        </div>
+    );
 
 }
 
